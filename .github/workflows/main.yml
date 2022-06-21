@@ -63,11 +63,11 @@ jobs:
 
       - name: push to github/savfile.github.io@main
         uses: JamesIves/github-pages-deploy-action@v4.3.3
-          with:
-            git-config-name: savfile
-            git-config-email: ${{ secrets.EMAIL }}
-            repository-name: savfile/savfile.github.io
-            branch: main
-            folder: public
-            token: ${{ secrets.GIT_TOKEN }}
-            force: true
+        with:
+          git-config-name: savfile
+          git-config-email: ${{ secrets.EMAIL }}
+          repository-name: savfile/savfile.github.io
+          branch: main
+          folder: public
+          token: ${{ secrets.GIT_TOKEN }}
+          force: true
