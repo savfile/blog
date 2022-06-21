@@ -1570,6 +1570,14 @@
   dependencies:
     "hexo-pagination" "1.0.0"
 
+"hexo-generator-feed@^3.0.0":
+  "integrity" "sha512-Jo35VSRSNeMitS2JmjCq3OHAXXYU4+JIODujHtubdG/NRj2++b3Tgyz9pwTmROx6Yxr2php/hC8og5AGZHh8UQ=="
+  "resolved" "https://registry.npmmirror.com/hexo-generator-feed/-/hexo-generator-feed-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "hexo-util" "^2.1.0"
+    "nunjucks" "^3.0.0"
+
 "hexo-generator-index@^2.0.0":
   "integrity" "sha512-q/29Vj9BZs0dwBcF+s9IT8ymS4aYZsDwBEYDnh96C8tsX+KPY5v6TzCdttz58BchifaJpP/l9mi6u9rZuYqA0g=="
   "resolved" "https://registry.npmmirror.com/hexo-generator-index/-/hexo-generator-index-2.0.0.tgz"
@@ -1663,7 +1671,7 @@
   "resolved" "https://registry.npmmirror.com/hexo-theme-fluid/-/hexo-theme-fluid-1.9.2.tgz"
   "version" "1.9.2"
 
-"hexo-util@^2.0.0", "hexo-util@^2.5.0", "hexo-util@^2.6.1":
+"hexo-util@^2.0.0", "hexo-util@^2.1.0", "hexo-util@^2.5.0", "hexo-util@^2.6.1":
   "integrity" "sha512-xj1jUrId2qTe8L/tRizWWRl+j7X1Zzh5rCVtffboOU0p/EfbPomxIxDvntTHT3fcqgvLHsncqJF9V5j7+buOqA=="
   "resolved" "https://registry.npmmirror.com/hexo-util/-/hexo-util-2.6.1.tgz"
   "version" "2.6.1"

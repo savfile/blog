@@ -30,6 +30,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - "README.md"
+  - "img/**/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -103,17 +104,15 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-- type: git
-  repo: https://github.com/savfile/savfile.github.io
-  branch: main
-- type: git
-  repo: https://gitee.com/savfile/savfile.gitee.io
-  branch: main
-- type: git
-  repo: https://bitbucket.org/savfile/savfile.bitbucket.io
-  branch: main
-- type: git
-  repo: https://e.coding.net/savfile/blog/savfile.coding.me
-  branch: main
 
 all_minifier: true
+
+feed:
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 10
