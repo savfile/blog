@@ -57,12 +57,6 @@ jobs:
       - name: hexo generate
         run: hexo generate
 
-      - name: copy files
-        run: |
-          mv ./public/-gitlab-ci.yml ./public/.gitlab-ci.yml
-          mkdir -p public/.github/workflows
-          mv ./public/main.yml ./public/.github/workflows/main.yml
-
       - name: push to github/savfile.github.io@main
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
