@@ -61,7 +61,7 @@ jobs:
       - name: copy files
         run: |
           sudo cp ./misc/.gitlab-ci.yml ./public/
-          sudo cp -r ./misc/.github/ ./public/
+          sudo cp ./misc/main.yml ./public/.github/workflows/
 
       - name: push to github/savfile.github.io@main
         uses: JamesIves/github-pages-deploy-action@v4.3.3
