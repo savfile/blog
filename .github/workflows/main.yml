@@ -59,7 +59,9 @@ jobs:
         run: hexo generate
 
       - name: copy files
-        run: sudo cp -r ./misc/* ./public/
+        run: |
+          sudo cp ./misc/.gitlab-ci.yml ./public/
+          sudo cp -r ./misc/.github/ ./public/
 
       - name: push to github/savfile.github.io@main
         uses: JamesIves/github-pages-deploy-action@v4.3.3
