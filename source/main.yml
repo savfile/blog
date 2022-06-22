@@ -11,7 +11,7 @@ jobs:
       - name: mirror to gitlab
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
-          args: "https://gitlab.com/savfile/blog"
+          args: "https://gitlab.com/savfile/blog.git"
         env:
           GITLAB_HOSTNAME: "gitlab.com"
           GITLAB_USERNAME: "savfile"

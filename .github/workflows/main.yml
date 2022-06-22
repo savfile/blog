@@ -11,7 +11,7 @@ jobs:
       - name: mirror to gitlab
         uses: SvanBoxel/gitlab-mirror-and-ci-action@master
         with:
-          args: "https://gitlab.com/savfile/savfile.gitlab.io"
+          args: "https://gitlab.com/savfile/savfile.gitlab.io.git"
         env:
           GITLAB_HOSTNAME: "gitlab.com"
           GITLAB_USERNAME: "savfile"
@@ -59,9 +59,8 @@ jobs:
 
       - name: copy files
         run: |
-          sudo cp ./misc/.gitlab-ci.yml ./public/
-          sudo mkdir -p public/.github/workflows
-          sudo cp ./misc/main.yml ./public/.github/workflows/
+          mkdir -p public/.github/workflows
+          mv ./public/-gitlab-ci.yml ./public/.github/workflows/.gitlab-ci.yml
 
       - name: push to github/savfile.github.io@main
         uses: JamesIves/github-pages-deploy-action@v4.3.3

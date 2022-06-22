@@ -31,6 +31,8 @@ i18n_dir: :lang
 skip_render:
   - "README.md"
   - "img/**/*"
+  - "main.yml"
+  - "-gitlab-ci.yml"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -83,7 +85,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'date'
+updated_option: 'empty'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
