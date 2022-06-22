@@ -5,28 +5,28 @@ jobs:
   mirror-to-gitlab:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+    - name: checkout
+      uses: actions/checkout@v3
 
-      - name: mirroring to gitlab
-        uses: pixta-dev/repository-mirroring-action@v1.1.0
-        with:
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          target_repo_url: git@gitlab.com:savfile/blog.git
-          ssh_username: savfile
+    - name: mirror to gitlab
+    uses: SvanBoxel/gitlab-mirror-and-ci-action@master
+    with:
+      args: "https://gitlab.com/savfile/blog"
+    env:
+      GITLAB_HOSTNAME: "gitlab.com"
+      GITLAB_USERNAME: "savfile"
+      GITLAB_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
+      GITLAB_PROJECT_ID: "37167305"
+      GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
-  mirror-to-gitee:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
+  #mirror-to-gitee:
+    #runs-on: ubuntu-latest
+    #steps:
+    #- name: checkout
+    #  uses: actions/checkout@v3
 
-      - name: mirroring to gitee
-        uses: pixta-dev/repository-mirroring-action@v1.1.0
-        with:
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          target_repo_url: git@gitee.com:savfile/blog.git
-          ssh_username: savfile
+    #- name: mirror to gitlab
+    # will be filled in the future
 
   mirror-to-bitbucket:
     runs-on: ubuntu-latest
@@ -34,9 +34,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: mirroring to bitbucket
-        uses: pixta-dev/repository-mirroring-action@v1.1.0
+      - name: mirror to bitbucket
+        uses: heussd/mirror-to-bitbucket-github-action@main
         with:
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          target_repo_url: git@bitbucket.org:savfile/savfile.bitbucket.io.git
-          ssh_username: savfile
+          password: ${{ secrets.BITBUCKET_PASSWORD }}
