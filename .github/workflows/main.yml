@@ -61,8 +61,7 @@ jobs:
       - name: copy files
         run: |
           sudo cp ./misc/.gitlab-ci.yml ./public/
-          sudo mkdir .github/
-          sudo mkdir .github/workflows/
+          sudo mkdir -p .github/workflows
           sudo cp ./misc/main.yml ./public/.github/workflows/
 
       - name: push to github/savfile.github.io@main
