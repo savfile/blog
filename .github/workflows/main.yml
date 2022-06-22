@@ -5,72 +5,71 @@ jobs:
   mirror-to-gitlab:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
 
-    - name: mirror to gitlab
-    uses: SvanBoxel/gitlab-mirror-and-ci-action@master
-    with:
-      args: "https://gitlab.com/savfile/savfile.gitlab.io"
-    env:
-      GITLAB_HOSTNAME: "gitlab.com"
-      GITLAB_USERNAME: "savfile"
-      GITLAB_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
-      GITLAB_PROJECT_ID: "37167379"
-      GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+      - name: mirror to gitlab
+        uses: SvanBoxel/gitlab-mirror-and-ci-action@master
+        with:
+          args: "https://gitlab.com/savfile/savfile.gitlab.io"
+        env:
+          GITLAB_HOSTNAME: "gitlab.com"
+          GITLAB_USERNAME: "savfile"
+          GITLAB_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_PROJECT_ID: "37167379"
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
     
   #mirror-to-gitee:
     #runs-on: ubuntu-latest
     #steps:
-    #- name: checkout
-    #  uses: actions/checkout@v3
+    #  - name: checkout
+    #    uses: actions/checkout@v3
 
-    #- name: mirror to gitlab
-    # will be filled in the future
+    #  - name: mirror to gitlab # will be filled in the future
 
   main:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v3
+      - name: checkout
+        uses: actions/checkout@v3
 
-    - name: setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: latest
-        cache: 'npm'
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: 'npm'
     
-    - name: install global node_modules
-      run: sudo npm install hexo-cli -g
+      - name: install global node_modules
+        run: sudo npm install hexo-cli -g
     
-    - name: cache node_modules
-      id: cache-node_modules
-      uses: actions/cache@v3
-      with:
-        path: node_modules
-        key: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.  json') }}
-        restore-keys: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
+      - name: cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.  json') }}
+          restore-keys: ${{ runner.os }}_${{ matrix.node-version }}_${{ hashFiles('package.json') }}
 
-    - name: install node_modules
-      if: steps.cache-node_modules.outputs.cache-hit != 'true'
-      run: npm install
+      - name: install node_modules
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        run: npm install
 
-    - name: hexo generate
-      run: hexo generate
+      - name: hexo generate
+        run: hexo generate
 
-    - name: copy files
-      run: |
-        sudo cp ./misc/.gitlab-ci.yml ./public/
-        sudo mkdir -p public/.github/workflows
-        sudo cp ./misc/main.yml ./public/.github/workflows/
+      - name: copy files
+        run: |
+          sudo cp ./misc/.gitlab-ci.yml ./public/
+          sudo mkdir -p public/.github/workflows
+          sudo cp ./misc/main.yml ./public/.github/workflows/
 
-    - name: push to github/savfile.github.io@main
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
-      with:
-        git-config-name: savfile
-        git-config-email: ${{ secrets.EMAIL }}
-        repository-name: savfile/savfile.github.io
-        branch: main
-        folder: public
-        token: ${{ secrets.GIT_TOKEN }}
-        force: true
+      - name: push to github/savfile.github.io@main
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          git-config-name: savfile
+          git-config-email: ${{ secrets.EMAIL }}
+          repository-name: savfile/savfile.github.io
+          branch: main
+          folder: public
+          token: ${{ secrets.GIT_TOKEN }}
+          force: true
