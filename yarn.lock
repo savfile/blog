@@ -443,7 +443,7 @@
     "parse5-htmlparser2-tree-adapter" "^7.0.0"
     "tslib" "^2.4.0"
 
-"chokidar@^3.0.0", "chokidar@^3.3.0":
+"chokidar@^3.0.0":
   "integrity" "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw=="
   "resolved" "https://registry.npmmirror.com/chokidar/-/chokidar-3.5.3.tgz"
   "version" "3.5.3"
@@ -3324,7 +3324,7 @@
   "resolved" "https://registry.npmmirror.com/strnum/-/strnum-1.0.5.tgz"
   "version" "1.0.5"
 
-"stylus@*", "stylus@^0.57.0":
+"stylus@^0.57.0":
   "integrity" "sha512-yOI6G8WYfr0q8v8rRvE91wbxFU+rJPo760Va4MF6K0I6BZjO4r+xSynkvyPBP9tV1CIEUeRsiidjIs2rzb1CnQ=="
   "resolved" "https://registry.npmmirror.com/stylus/-/stylus-0.57.0.tgz"
   "version" "0.57.0"

@@ -457,7 +457,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -529,7 +529,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -677,7 +677,7 @@ post:
   # 文章图片可点击放大
   # Zoom feature of images
   image_zoom:
-    enable: false
+    enable: true
     # 放大后图片链接替换规则，可用于将压缩图片链接替换为原图片链接，如 ['-slim', ''] 是将链接中 `-slim` 移除；如果想使用正则请使用 `re:` 前缀，如 ['re:\\d{3,4}\\/\\d{3,4}\\/', '']
     # The image url replacement when zooming, the feature can be used to replace the compressed image to the original image, eg: ['-slim', ''] removes `-slim` from the image url when zooming; if you want to use regular, use prefix `re:`, eg: ['re:\\d{3,4}\\/\\d{3,4}\\/','']
     img_url_replace: ['', '']
@@ -725,7 +725,7 @@ post:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
-    type: giscus
+    type: livere #utterances giscus
 
 
 #---------------------------
@@ -741,8 +741,8 @@ post:
 # Based on GitHub Issues
 # See: https://utteranc.es
 utterances:
-  repo:
-  issue_term: pathname
+  repo: "savfile/utterances"
+  issue_term: title
   label: utterances
   theme: github-light
   theme_dark: github-dark
@@ -830,7 +830,7 @@ changyan:
 # Based on third-party service
 # See: https://www.livere.com
 livere:
-  uid: ''
+  uid: 'MTAyMC81NjY4OC8zMzE1Mg=='
 
 # Remark42
 # 需要自托管服务端
@@ -866,13 +866,13 @@ cusdis:
 # Based on GitHub Discussions, similar to Utterances
 # See: https://giscus.app/
 giscus:
-  repo: "savfile/commit-here"
+  repo: "savfile/giscus"
   repo-id: "R_kgDOHi14cg"
   category: "Announcements"
   category-id: "DIC_kwDOHi14cs4CP0dF"
   theme-light: light
   theme-dark: dark
-  mapping: "pathname"
+  mapping: "title"
   reactions-enabled: 0
   emit-metadata: 0
   input-position: top
@@ -883,7 +883,7 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -894,7 +894,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -923,7 +923,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -940,7 +940,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/estelle.webp
@@ -962,7 +962,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -973,7 +973,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -987,7 +987,7 @@ page404:
 #---------------------------
 links:
   enable: false
-  banner_img: https://tenapi.cn/acg
+  banner_img: /img/maitetsu.webp
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项
