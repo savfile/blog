@@ -423,8 +423,17 @@ open_graph:
 footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
-  content: 
-    <img src="https://count.getloli.com/get/@savfile-blog"/>
+  content: '
+    <!--<img src="https://count.getloli.com/get/@savfile-blog"/>
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>-->
+    <div style="font-size: 0.85rem">
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+      <script src="/js/duration.js"></script>
+    </div>
+  '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
@@ -685,7 +694,7 @@ post:
   # 脚注语法，会在文章底部生成脚注，如果 Markdown 渲染器本身支持，则建议关闭，否则可能会冲突
   # Support footnote syntax, footnotes will be generated at the bottom of the post page. If the Markdown renderer itself supports it, please disable it, otherwise it may conflict
   footnote:
-    enable: false
+    enable: true
     # 脚注的节标题，也可以在 front-matter 中通过 `footnote: <h2>Reference</h2>` 这种形式修改单独页面的 header
     # The section title of the footnote, you can also modify the header of a single page in the form of `footnote: <h2>Reference</h2>` in front-matter
     header: ''
