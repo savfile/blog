@@ -2,31 +2,6 @@ name: main
 on: push
 
 jobs:
-  mirror-to-gitlab:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-
-      - name: mirror to gitlab
-        uses: SvanBoxel/gitlab-mirror-and-ci-action@master
-        with:
-          args: "https://gitlab.com/savfile/savfile.gitlab.io.git"
-        env:
-          GITLAB_HOSTNAME: "gitlab.com"
-          GITLAB_USERNAME: "savfile"
-          GITLAB_PASSWORD: ${{ secrets.GITLAB_TOKEN }}
-          GITLAB_PROJECT_ID: "37167379"
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-    
-  #mirror-to-gitee:
-    #runs-on: ubuntu-latest
-    #steps:
-    #  - name: checkout
-    #    uses: actions/checkout@v3
-
-    #  - name: mirror to gitlab # will be filled in the future
-
   main:
     runs-on: ubuntu-latest
     steps:
