@@ -1,9 +1,6 @@
 name: generate and deploy
 on: push
 
-permissions:
-  repository-projects: write
-
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -43,5 +40,5 @@ jobs:
           repository-name: savfile/savfile.github.io
           branch: main
           folder: public
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           force: true
