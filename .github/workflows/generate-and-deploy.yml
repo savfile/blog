@@ -1,5 +1,8 @@
-name: main
+name: generate and deploy
 on: push
+
+permissions:
+  repository-projects: write
 
 jobs:
   main:
@@ -40,5 +43,5 @@ jobs:
           repository-name: savfile/savfile.github.io
           branch: main
           folder: public
-          token: ${{ secrets.GIT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           force: true

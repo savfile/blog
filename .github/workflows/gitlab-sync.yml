@@ -1,0 +1,21 @@
+name: gitlab sync
+
+on: push
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: sync
+        run: |
+          git fetch --unshallow
+          rm -rf "$HOME/.ssh"
+          mkdir -p "$HOME/.ssh"
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          sudo sh -c "echo StrictHostKeyChecking no >>/etc/ssh/ssh_config"
+          git remote add upstream git@gitlab.com:savfile/savfile.gitlab.io.git
+          git push upstream --all --force
